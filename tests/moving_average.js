@@ -47,15 +47,16 @@ test('moving average on a constant value returns that value', function(t) {
 test('moving average works', function(t) {
   t.plan(2);
 
-  var ma = MA(5000);
+  var ma = MA(50000);
 
   var now = Date.now();
   ma.push(now, 1);
   ma.push(now + 1000, 2);
   ma.push(now + 2000, 3);
-  ma.push(now + 3000, 4);
+  ma.push(now + 3000, 3);
+  ma.push(now + 4000, 10);
 
   var m = ma.movingAverage();
-  t.ok(m < 1.97);
-  t.ok(m > 1.96);
+  t.ok(m < 7.9);
+  t.ok(m > 7.8);
 });

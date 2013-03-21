@@ -17,7 +17,7 @@ function MovingAverage(timespan) {
 
   
   function alpha(t, pt) {
-    return 1 - (exp(- (t - pt) / timespan))
+    return 1 - (exp(- (t - pt) / timespan * 60))
   }
 
   
