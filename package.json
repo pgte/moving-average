@@ -1,0 +1,21 @@
+{
+  "name": "moving-average",
+  "version": "0.0.1",
+  "description": "Moving Average",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests/moving_average.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:pgte/moving-average.git"
+  },
+  "keywords": [
+    "moving",
+    "average",
+    "average",
+    "statistics"
+  ],
+  "author": "pgte",
+  "license": "MIT"
+}
