@@ -10,6 +10,9 @@
     "type": "git",
     "url": "git@github.com:pgte/moving-average.git"
   },
+  "devDependencies": {
+    "tap": "*"
+  },
   "keywords": [
     "moving",
     "average",
