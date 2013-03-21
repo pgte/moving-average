@@ -1,6 +1,6 @@
 # moving-average
 
-Moving Average for Node.js.
+Exponential Moving Average for Node.js.
 
 ## Install
 
