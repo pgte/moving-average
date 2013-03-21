@@ -14,7 +14,7 @@ $ npm install moving-average
 var timeInterval = 5 * 60 * 1000; // 5 minutes
 
 var MA = require('moving-average');
-var ma = MA();
+var ma = MA(timeInterval);
 
 setInterval(function() {
   ma.push(Date.now(), Math.random() * 500));
