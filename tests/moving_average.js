@@ -60,3 +60,44 @@ test('moving average works', function(t) {
   t.ok(m < 7.9);
   t.ok(m > 7.8);
 });
+
+test('variance is 0 on one sample', function(t) {
+  t.plan(1);
+
+  var ma = MA(5000);
+  ma.push(Date.now(), 5);
+
+  t.strictEqual(ma.variance(), 0);
+});
+
+test('variance works (1)', function(t) {
+  t.plan(2);
+
+  var ma = MA(5000);
+  var now = Date.now();
+  ma.push(now, 0);
+  ma.push(now + 1000, 1);
+  ma.push(now + 2000, 2);
+  ma.push(now + 3000, 3);
+  ma.push(now + 3000, 4);
+
+  var v = ma.variance();
+  t.ok(v > 1);
+  t.ok(v < 1.0001);
+});
+
+test('variance works (2)', function(t) {
+  t.plan(2);
+
+  var ma = MA(5000);
+  var now = Date.now();
+  ma.push(now, 0);
+  ma.push(now + 1000, 1);
+  ma.push(now + 2000, 1);
+  ma.push(now + 3000, 1);
+  ma.push(now + 3000, 1);
+
+  var v = ma.variance();
+  t.ok(v > 0);
+  t.ok(v < 0.0001);
+});
