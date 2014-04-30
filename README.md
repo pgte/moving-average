@@ -19,7 +19,7 @@ var MA = require('moving-average');
 var ma = MA(timeInterval);
 
 setInterval(function() {
-  ma.push(Date.now(), Math.random() * 500));
+  ma.push(Date.now(), Math.random() * 500);
   console.log('moving average now is', ma.movingAverage();
   console.log('moving variance now is', ma.movingVariance();
 });
