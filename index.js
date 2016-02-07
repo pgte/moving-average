@@ -17,26 +17,28 @@ function MovingAverage(timespan) {
 
   var ma;     // moving average
   var v = 0;  // variance
+  var nSamples = 0;
 
   var previousTime;
   var ret = {};
 
   
   function alpha(t, pt) {
-    return 1 - (exp(- (t - pt) / timespan * 60))
+    return 1 - (exp(- (t - pt) / timespan * 60));
   }
 
   
   ret.push =
   function push(time, value) {
+    nSamples++;
     if (previousTime) {
       
-      /// calculate moving average
+      // calculate moving average
       var a = alpha(time, previousTime);
       var previousMa = ma;
       ma = a * value + (1 - a) * ma;
 
-      /// calculate variance
+      // calculate variance
       v = v + (value - previousMa) * (value  - ma);
 
     } else {
@@ -46,7 +48,7 @@ function MovingAverage(timespan) {
   };
 
 
-  /// Exponential Moving Average
+  // Exponential Moving Average
 
   ret.movingAverage =
   function movingAverage() {
@@ -54,10 +56,10 @@ function MovingAverage(timespan) {
   };
 
 
-  /// Variance
+  // Variance
   ret.variance =
   function variance() {
-    return v;
+    return v / nSamples;
   };
 
   return ret;
