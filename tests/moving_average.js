@@ -82,8 +82,8 @@ test('variance works (1)', function(t) {
   ma.push(now + 3000, 4);
 
   var v = ma.variance();
-  t.ok(v > 1);
-  t.ok(v < 1.0001);
+  t.ok(v > 0.2);
+  t.ok(v < 2.0001);
 });
 
 test('variance works (2)', function(t) {
