@@ -1,5 +1,7 @@
 # moving-average
 
+[![Build Status](https://travis-ci.org/pgte/moving-average.svg?branch=master)](https://travis-ci.org/pgte/moving-average)
+
 Exponential Moving Average for Node.js.
 
 Also suports Moving Variance.
