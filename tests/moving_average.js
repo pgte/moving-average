@@ -57,8 +57,8 @@ test('moving average works', function(t) {
   ma.push(now + 4000, 10);
 
   var m = ma.movingAverage();
-  t.ok(m < 7.9);
-  t.ok(m > 7.8);
+  t.ok(m < 1.28);
+  t.ok(m > 1.27);
 });
 
 test('variance is 0 on one sample', function(t) {
@@ -82,8 +82,8 @@ test('variance works (1)', function(t) {
   ma.push(now + 3000, 4);
 
   var v = ma.variance();
-  t.ok(v > 0.2);
-  t.ok(v < 2.0001);
+  t.ok(v > 3.56);
+  t.ok(v < 3.57);
 });
 
 test('variance works (2)', function(t) {
@@ -98,6 +98,6 @@ test('variance works (2)', function(t) {
   ma.push(now + 3000, 1);
 
   var v = ma.variance();
-  t.ok(v > 0);
-  t.ok(v < 0.0001);
+  t.ok(v > 0.4);
+  t.ok(v < 0.5);
 });
