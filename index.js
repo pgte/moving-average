@@ -22,17 +22,17 @@ function MovingAverage(timespan) {
   var previousTime;
   var ret = {};
 
-  
+
   function alpha(t, pt) {
-    return 1 - (exp(- (t - pt) / timespan * 60));
+    return 1 - (exp(- (t - pt) / timespan));
   }
 
-  
+
   ret.push =
   function push(time, value) {
     nSamples++;
     if (previousTime) {
-      
+
       // calculate moving average
       var a = alpha(time, previousTime);
       var previousMa = ma;
