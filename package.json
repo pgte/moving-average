@@ -1,6 +1,6 @@
 {
   "name": "moving-average",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Exponential Moving Average",
   "main": "index.js",
   "scripts": {
