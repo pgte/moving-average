@@ -34,13 +34,11 @@ function MovingAverage(timespan) {
     if (previousTime) {
 
       // calculate moving average
-      var a = alpha(time, previousTime);
-      var previousMa = ma;
-      ma = a * value + (1 - a) * ma;
-
-      // calculate variance
-      v = v + (value - previousMa) * (value  - ma);
-
+      var diff = value - ma
+      var a = alpha(time, previousTime)
+      var incr = a * diff
+      ma = a * value + (1 - a) * ma
+      v = (1 - a) * (v + diff * incr)
     } else {
       ma = value;
     }
@@ -59,7 +57,7 @@ function MovingAverage(timespan) {
   // Variance
   ret.variance =
   function variance() {
-    return v / nSamples;
+    return v
   };
 
   return ret;

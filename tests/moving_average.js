@@ -70,6 +70,21 @@ test('variance is 0 on one sample', function(t) {
   t.strictEqual(ma.variance(), 0);
 });
 
+test('variance is 0 on samples with same value', function(t) {
+  t.plan(1);
+
+  var ma = MA(5000);
+  var now = Date.now();
+  ma.push(now, 3);
+  ma.push(now + 1000, 3);
+  ma.push(now + 2000, 3);
+  ma.push(now + 3000, 3);
+  ma.push(now + 4000, 3);
+
+  t.strictEqual(ma.variance(), 0);
+});
+
+
 test('variance works (1)', function(t) {
   t.plan(2);
 
@@ -79,11 +94,11 @@ test('variance works (1)', function(t) {
   ma.push(now + 1000, 1);
   ma.push(now + 2000, 2);
   ma.push(now + 3000, 3);
-  ma.push(now + 3000, 4);
+  ma.push(now + 4000, 4);
 
   var v = ma.variance();
-  t.ok(v > 3.56);
-  t.ok(v < 3.57);
+  t.ok(v > 2.53);
+  t.ok(v < 2.54);
 });
 
 test('variance works (2)', function(t) {
@@ -95,9 +110,9 @@ test('variance works (2)', function(t) {
   ma.push(now + 1000, 1);
   ma.push(now + 2000, 1);
   ma.push(now + 3000, 1);
-  ma.push(now + 3000, 1);
+  ma.push(now + 4000, 1);
 
   var v = ma.variance();
-  t.ok(v > 0.4);
-  t.ok(v < 0.5);
+  t.ok(v > 0.24);
+  t.ok(v < 0.25);
 });
