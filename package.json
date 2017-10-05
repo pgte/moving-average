@@ -4,13 +4,16 @@
   "description": "Exponential Moving Average",
   "main": "index.js",
   "scripts": {
-    "test": "node tests/moving_average.js"
+    "test": "npm run lint && npm run test:node",
+    "test:node": "node tests/moving_average.js",
+    "lint": "standard"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:pgte/moving-average.git"
   },
   "devDependencies": {
+    "standard": "^10.0.3",
     "tap": "*"
   },
   "keywords": [
