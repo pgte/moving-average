@@ -15,7 +15,6 @@ function MovingAverage (timespan) {
   let f = 0  // forecast
 
   let previousTime
-  let previousValue
 
   let ret = {}
 
@@ -56,7 +55,7 @@ function MovingAverage (timespan) {
   }
 
   ret.deviation =
-  function deviation() {
+  function deviation () {
     return d
   }
 
