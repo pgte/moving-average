@@ -22,6 +22,11 @@
     "average",
     "statistics"
   ],
-  "author": "pgte",
-  "license": "MIT"
+  "author": "Pedro Teixeira <i@pgte.me>",
+  "contributors": [
+    "Pedro Teixeira <i@pgte.me>",
+    "John Meisner <jhn_msnr@yahoo.com>",
+    "Max Kutny <https://github.com/mkutny>"
+  ],
+  "license": "MIT",
 }
