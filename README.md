@@ -6,7 +6,7 @@ Online calculation of Exponential Moving Average for Node.js.
 
 Also suports Moving Variance, Moving Deviation and Forecast.
 
-The [following](https://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average) online algorythm is implemented:
+The [following](https://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average) online algorithm is implemented:
 
 ```
 diff := x - mean
