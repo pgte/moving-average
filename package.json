@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Exponential Moving Average",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "npm run lint && npm run test:node",
     "test:node": "node tests/moving_average.js",
